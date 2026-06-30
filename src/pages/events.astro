@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import eventsData from '../data/events.json';
+
+const description = "Tournaments, workshops, and random chess variants :D";
+
+const formatEventDate = (date) => {
+  if (/^\d{4}-\d{2}$/.test(date)) {
+    const [year, month] = date.split('-').map(Number);
+    return new Date(year, month - 1, 1).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }).toUpperCase();
+  }
+
+  const parsedDate = new Date(date);
+
+  if (Number.isNaN(parsedDate.getTime())) {
+    return 'TBA';
+  }
+
+  return parsedDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }).toUpperCase();
+};
+---
+
+<BaseLayout title="Events" description={description}>
+  <section class="py-24 relative overflow-hidden bg-bg">
+    <div class="absolute inset-0 chess-pattern opacity-50 pointer-events-none"></div>
+    <div class="max-w-[1200px] mx-auto px-4 md:px-8 relative z-10">
+      <h1 class="font-serif font-semibold text-[clamp(2.5rem,6vw,5rem)] text-parchment tracking-[-0.02em] leading-[1.1] mb-6">Events</h1>
+      <p class="font-body text-lg text-muted">{description}</p>
+      <div class="rule-gold"></div>
+      <div class="relative mt-16 pl-4 md:pl-8">
+        <div class="absolute left-0 top-2 bottom-0 w-px bg-gold-dim"></div>
+        <div class="space-y-16">
+          {eventsData.map((event) => (
+            <div class="relative">
+              <div class="absolute w-2 h-2 rounded-full bg-gold -left-[1.05rem] md:-left-[2.05rem] top-2"></div>
+              <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-start">
+                <div class="font-mono text-sm text-gold-dim w-32 shrink-0 pt-1">
+                  {formatEventDate(event.date)}
+                </div>
+                <div class="flex-grow">
+                  <h3 class="font-serif text-[1.5rem] text-parchment leading-tight mb-3">
+                    {event.name}
+                    <span class={`inline-block ml-3 px-3 py-1 rounded-full text-[0.75rem] font-sans font-semibold tracking-widest uppercase border align-middle ${event.status === 'completed' ? 'bg-[#6b5f501f] text-dim border-border' : event.status === 'ongoing' ? 'bg-[#4a7c591f] text-[#6db88a] border-[#4a7c59]' : 'bg-[#c9a84c1f] text-gold border-gold-dim'}`}>
+                      {event.status}
+                    </span>
+                  </h3>
+                  <p class="font-body text-muted leading-[1.7] max-w-[65ch]">
+                    {event.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

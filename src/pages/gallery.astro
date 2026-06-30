@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import galleryData from '../data/gallery.json';
+
+const description = "Moments from the board. View our gallery of events and matches.";
+---
+
+<BaseLayout title="Gallery" description={description}>
+  <section class="py-24 bg-bg min-h-[70vh]">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-8">
+      <h1 class="font-serif font-semibold text-[clamp(2.5rem,6vw,5rem)] text-parchment tracking-[-0.02em] leading-[1.1] mb-6">Gallery</h1>
+      <p class="font-body text-lg text-muted">Moments from the board</p>
+      <div class="rule-gold"></div>
+      {galleryData.length === 0 ? (
+        <div class="flex justify-center items-center py-32">
+          <p class="font-body italic text-muted text-lg">Photos coming soon</p>
+        </div>
+      ) : (
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+          {galleryData.map((img: any) => (
+            <div class="break-inside-avoid">
+              <img 
+                src={img.url} 
+                alt={img.alt || "Gallery image"} 
+                loading="lazy" 
+                decoding="async" 
+                class="w-full h-auto rounded-sm border border-border hover:border-gold cursor-pointer transition-colors duration-250 gallery-img"
+              />
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <div id="lightbox" class="fixed inset-0 z-[100] bg-[rgba(12,11,9,0.95)] backdrop-blur-md hidden flex items-center justify-center p-4 md:p-8 opacity-0 transition-opacity duration-300">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-muted hover:text-gold focus:outline-none z-[110]" aria-label="Close Lightbox">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="Expanded View" class="max-w-full max-h-full object-contain shadow-raised rounded-sm" />
+  </div>
+</BaseLayout>
+
+<script>
+  const galleryImages = document.querySelectorAll('.gallery-img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  if (lightbox && lightboxImg && lightboxClose) {
+    galleryImages.forEach(img => {
+      img.addEventListener('click', (e) => {
+        const target = e.target as HTMLImageElement;
+        lightboxImg.src = target.src;
+        lightboxImg.alt = target.alt;
+        lightbox.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          lightbox.classList.remove('opacity-0');
+        });
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.add('opacity-0');
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+        lightboxImg.src = '';
+      }, 300);
+      document.body.style.overflow = '';
+    };
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        closeLightbox();
+      }
+    });
+  }
+</script>

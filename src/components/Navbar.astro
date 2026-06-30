@@ -1,0 +1,50 @@
+---
+---
+<header class="sticky top-0 z-50 border-b border-border bg-[rgba(12,11,9,0.88)] backdrop-blur-[12px]">
+  <div class="max-w-[1200px] mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
+    <a href="/desperado/" class="flex items-center" aria-label="Desperado Home">
+      <img src="/desperado/logo/desperado-logo.svg" alt="The Desperado Logo" class="h-9 w-auto" />
+    </a>
+
+    <nav class="hidden md:flex items-center space-x-6 h-full">
+      <a href="/desperado/" class="font-sans font-medium text-sm text-muted hover:text-gold transition-colors duration-150 h-full flex items-center border-b-2 border-transparent">Home</a>
+      <a href="/desperado/events/" class="font-sans font-medium text-sm text-muted hover:text-gold transition-colors duration-150 h-full flex items-center border-b-2 border-transparent">Events</a>
+      <a href="/desperado/gallery/" class="font-sans font-medium text-sm text-muted hover:text-gold transition-colors duration-150 h-full flex items-center border-b-2 border-transparent">Gallery</a>
+      <a href="/desperado/about/" class="font-sans font-medium text-sm text-muted hover:text-gold transition-colors duration-150 h-full flex items-center border-b-2 border-transparent">About</a>
+    </nav>
+
+    <button id="mobile-menu-btn" class="md:hidden text-muted hover:text-gold focus:outline-none" aria-label="Toggle Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface px-4 py-4 space-y-4">
+    <a href="/desperado/" class="block font-sans font-medium text-sm text-muted hover:text-gold">Home</a>
+    <a href="/desperado/events/" class="block font-sans font-medium text-sm text-muted hover:text-gold">Events</a>
+    <a href="/desperado/gallery/" class="block font-sans font-medium text-sm text-muted hover:text-gold">Gallery</a>
+    <a href="/desperado/about/" class="block font-sans font-medium text-sm text-muted hover:text-gold">About</a>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+
+  const currentPath = window.location.pathname;
+  const links = document.querySelectorAll('nav a, #mobile-menu a');
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath || href === currentPath + '/' || currentPath === href + '/') {
+      link.classList.remove('text-muted', 'border-transparent');
+      link.classList.add('text-gold');
+      if (link.parentElement?.tagName === 'NAV') {
+        link.classList.add('border-gold');
+      }
+    }
+  });
+</script>

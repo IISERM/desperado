@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+const currentPath = Astro.url.pathname;
+const ogImage = "/desperado/logo/desperado-logo.png";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="theme-color" content="#c9a84c" />
+		<link rel="icon" type="image/svg+xml" href="/desperado/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/desperado/favicon.ico" />
+		<title>{title} · Desperado</title>
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:type" content="website" />
+		<link rel="canonical" href={`https://iiserm.github.io${currentPath}`} />
+	</head>
+	<body>
+		<Navbar />
+		<slot />
+		<Footer />
+	</body>
+</html>

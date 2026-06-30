@@ -1,0 +1,35 @@
+---
+---
+<style>
+.knight-svg {
+  width: min(280px, 50vw);
+  height: auto;
+  /* animation: float 4s ease-in-out infinite; */
+  filter: drop-shadow(0 0 40px rgba(201,168,76,0.2));
+}
+
+.hero-bg {
+  background: radial-gradient(ellipse at center, #0d1a20 0%, #0c0b09 55%, #0a0906 100%);
+}
+</style>
+
+<section class="relative h-[100vh] hero-bg flex flex-col items-center justify-center pt-16">
+  <div class="flex items-center gap-4 mb-8">
+    <div class="h-px bg-gold-dim w-12"></div>
+    <h1>
+      <span class="font-serif font-semibold font-semibold text-[clamp(2.5rem,6vw,5rem)] text-parchment tracking-[-0.02em] leading-[1.1] text-center mb-4 px-4">The Desperado</span>
+    </h1>
+    <div class="h-px bg-gold-dim w-12"></div>
+  </div>
+
+  <!-- <img src="/desperado/logo/desperado-logo.svg" alt="Desperado Knight" class="knight-svg mb-10" /> -->
+
+  <h1 class="font-serif text-[30px] uppercase tracking-[0.15em] text-gold">
+    Chess Club of IISER Mohali
+  </h1>
+
+  <div class="absolute bottom-12 flex flex-col items-center animate-pulse">
+    <span class="font-sans text-xs text-gold-dim mb-2 uppercase tracking-widest">Scroll</span>
+    <svg class="w-4 h-4 text-gold-dim" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+  </div>
+</section>

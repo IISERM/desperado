@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const description = "Learn about The Desperado, the chess club of IISER Mohali, our story, and our convenors.";
+---
+
+<BaseLayout title="About" description={description}>
+  <section class="py-24 relative overflow-hidden bg-bg border-b border-border">
+    <div class="absolute inset-0 chess-pattern opacity-50 pointer-events-none"></div>
+    <div class="max-w-[1200px] mx-auto px-4 md:px-8 relative z-10 flex flex-col items-center text-center">
+      <span class="font-sans font-semibold text-[11px] uppercase tracking-[0.15em] text-gold mb-6">About Us</span>
+      <h1 class="font-serif font-semibold text-[clamp(2.5rem,5vw,4rem)] text-parchment tracking-[-0.02em] leading-[1.1] mb-12">
+        The Desperado
+      </h1>
+      <div class="max-w-[70ch] text-left mx-auto space-y-6">
+        <p class="font-body text-lg leading-[1.8] text-muted">
+          The Desperado emerged from a shared passion for strategy, foresight, and the 64 squares. We are the chess community of the Indian Institute of Science Education and Research (IISER) Mohali, dedicated to bringing togther all the chess enthusiasts on the campus.
+        </p>
+        <blockquote class="font-serif italic text-2xl md:text-3xl text-gold border-l-2 border-gold-dim pl-6 py-2 my-10">
+          "Chess is a war over the board. The object is to crush the opponent's mind."
+           <footer class="font-sans text-sm text-muted mt-4">--Bobby Fischer</footer>
+        </blockquote>
+        <p class="font-body text-lg leading-[1.8] text-muted">
+          Our mission is to foster a culture of analytical thinking, resilience, and sportsmanship. We believe that the skills honed over the chessboard—patience, calculation, and grace under pressure—are invaluable both in science and in life. 
+        </p>
+        <p class="font-body text-lg leading-[1.8] text-muted">
+          From casual bullet games in the evening to intense inter-IISER classical battles, the club provides a space for everyone. We look forward to regularly organizing tournaments, workshops, and friendly matches, ensuring that every member has the opportunity to grow and enjoy the game.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="py-24 bg-surface border-b border-border">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-8">
+      <h2 class="font-serif font-medium text-[2rem] text-parchment mb-10 text-center">What We Do</h2>
+      <div class="max-w-[70ch] mx-auto">
+        <ul class="space-y-4 font-body text-lg text-muted">
+          <li class="flex items-start gap-4">
+            <span class="text-gold mt-1">&#9823;</span>
+            <span>Regular Tournaments (Blitz, Rapid, and Classical)</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="text-gold mt-1">&#9823;</span>
+            <span>Coaching & Study Groups for all levels</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="text-gold mt-1">&#9823;</span>
+            <span>Inter-IISER Matches and competitive events</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="py-24 bg-bg border-b border-border">
+    <div class="max-w-[800px] mx-auto px-4 md:px-8">
+      <h2 class="font-serif font-medium text-[2rem] text-parchment mb-12 text-center">Convenors</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="bg-surface border border-border border-t-[1px] border-t-gold-dim rounded-[8px] p-6 flex flex-col items-center text-center transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_24px_rgba(0,0,0,0.7),0_1px_4px_rgba(0,0,0,0.5),0_0_24px_rgba(201,168,76,0.18)] hover:border-gold-dim">
+          <div class="w-20 h-20 rounded-full bg-surface-up border-[1.5px] border-gold-dim flex items-center justify-center font-serif text-2xl font-semibold text-gold tracking-wider mb-4">PC</div>
+          <h3 class="font-serif text-[1.25rem] text-parchment mb-1">Pranaya Chugh</h3>
+          <p class="font-sans text-sm text-muted mb-4">Convenor</p>
+          <a href="mailto:ms23062@iisermohali.ac.in" class="font-sans text-sm text-gold hover:text-gold-light transition-colors duration-150">ms23062@iisermohali.ac.in</a>
+        </div>
+        <div class="bg-surface border border-border border-t-[1px] border-t-gold-dim rounded-[8px] p-6 flex flex-col items-center text-center transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_24px_rgba(0,0,0,0.7),0_1px_4px_rgba(0,0,0,0.5),0_0_24px_rgba(201,168,76,0.18)] hover:border-gold-dim">
+          <div class="w-20 h-20 rounded-full bg-surface-up border-[1.5px] border-gold-dim flex items-center justify-center font-serif text-2xl font-semibold text-gold tracking-wider mb-4">AD</div>
+          <h3 class="font-serif text-[1.25rem] text-parchment mb-1">Arsh Dhir</h3>
+          <p class="font-sans text-sm text-muted mb-4">Convenor</p>
+          <a href="mailto:ms24025@iisermohali.ac.in" class="font-sans text-sm text-gold hover:text-gold-light transition-colors duration-150">ms24025@iisermohali.ac.in</a>
+        </div>
+        <div class="bg-surface border border-border border-t-[1px] border-t-gold-dim rounded-[8px] p-6 flex flex-col items-center text-center transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_4px_24px_rgba(0,0,0,0.7),0_1px_4px_rgba(0,0,0,0.5),0_0_24px_rgba(201,168,76,0.18)] hover:border-gold-dim">
+          <div class="w-20 h-20 rounded-full bg-surface-up border-[1.5px] border-gold-dim flex items-center justify-center font-serif text-2xl font-semibold text-gold tracking-wider mb-4">HVS</div>
+          <h3 class="font-serif text-[1.25rem] text-parchment mb-1">H'rsh V. Shreshth</h3>
+          <p class="font-sans text-sm text-muted mb-4">Convenor</p>
+          <a href="mailto:ms24085@iisermohali.ac.in" class="font-sans text-sm text-gold hover:text-gold-light transition-colors duration-150">ms24085@iisermohali.ac.in</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-surface">
+    <div class="max-w-[1200px] mx-auto px-4 md:px-8 text-center">
+      <div class="max-w-[70ch] mx-auto space-y-4">
+        <p class="font-body text-lg text-parchment">We welcome players of all skill levels.</p>
+        <p class="font-body text-lg text-muted">Reach out to any of our convenors or find us on <a href="https://lichess.org/team/the-desperado-iiser-m" target="_blank" rel="noopener noreferrer" class="text-gold hover:text-gold-light underline">Lichess</a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

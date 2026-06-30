@@ -1,0 +1,82 @@
+[
+  {
+    "id": "planned-classical-inter-iiser-tournaments",
+    "name": "Planned Classical and Inter-IISER Tournaments",
+    "date": "TBA",
+    "type": "tournament",
+    "status": "upcoming",
+    "description": "In the future, we are planning classical tournaments and inter-IISER tournaments.",
+    "lichessUrl": null,
+    "resultsUrl": null
+  },
+  {
+    "id": "outdoor-chess-event-2026-03-08",
+    "name": "Outdoor Chess Event",
+    "date": "2026-03-08",
+    "type": "meet",
+    "status": "completed",
+    "description": "Students and faculty played friendly matches in an outdoor chess event.",
+    "lichessUrl": null,
+    "resultsUrl": null
+  },
+  {
+    "id": "inter-batch-team-chess-tournament-2026-03",
+    "name": "Inter-Batch Team Chess Tournament",
+    "date": "2026-03",
+    "type": "tournament",
+    "status": "completed",
+    "description": "An inter-batch 5v5 chess tournament was played in March 2026, with four open boards and one female board.",
+    "lichessUrl": null,
+    "resultsUrl": null
+  },
+  {
+    "id": "bughouse-chess-tournament-insomnia-2026-02-21",
+    "name": "Bughouse Chess Tournament at Insomnia",
+    "date": "2026-02-21",
+    "type": "tournament",
+    "status": "completed",
+    "description": "A bughouse chess tournament was organized during Insomnia, the cultural fest of IISER Mohali, with participation from students across multiple colleges.",
+    "lichessUrl": null,
+    "resultsUrl": null
+  },
+  {
+    "id": "talk-opening-principles-middlegame-strategy-2026-02-17",
+    "name": "Talk on Chess Opening Principles and Middlegame Strategy",
+    "date": "2026-02-17",
+    "type": "talk",
+    "status": "completed",
+    "description": "Arkish Chakraborty (MS21) delivered a talk on chess opening principles and middlegame strategy.",
+    "lichessUrl": null,
+    "resultsUrl": null
+  },
+  {
+    "id": "casual-meet-2026-01-17",
+    "name": "Casual Meet",
+    "date": "2026-01-17",
+    "type": "meet",
+    "status": "completed",
+    "description": "Another casual meet brought students together for friendly matches.",
+    "lichessUrl": null,
+    "resultsUrl": null
+  },
+  {
+    "id": "winter-online-tournament-2025-12-13",
+    "name": "Winter Online Tournament",
+    "date": "2025-12-13",
+    "type": "tournament",
+    "status": "completed",
+    "description": "A winter online tournament was held on Lichess for club members.",
+    "lichessUrl": "https://lichess.org/swiss/5bBl0Nxx",
+    "resultsUrl": null
+  },
+  {
+    "id": "casual-meet-2025-12-04",
+    "name": "Casual Meet",
+    "date": "2025-12-04",
+    "type": "meet",
+    "status": "completed",
+    "description": "Friendly over-the-board matches were played in a relaxed meet with students.",
+    "lichessUrl": null,
+    "resultsUrl": null
+  }
+]
